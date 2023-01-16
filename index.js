@@ -13,3 +13,13 @@ setInterval(() => {
     document.querySelector('.active').classList.remove('active')
     dots[index].classList.add('active')
 }, 3000);
+
+window.onscroll = () => {
+    const navBar = document.getElementsByTagName('header').item(0);
+    console.log(document.documentElement.scrollTop);
+    if(document.documentElement.scrollTop > 100)
+        navBar.classList.add('hide')
+    else if(document.documentElement.scrollTop <= 500)
+        navBar.classList.remove('hide')
+
+}
