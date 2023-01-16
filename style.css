@@ -166,7 +166,7 @@ footer h1 {
 
 footer div:nth-child(2) {
     height: 50%;
-    padding: 100px 0;
+    margin: 100px 0;
 }
 
 footer div:nth-child(3) {
@@ -186,14 +186,20 @@ footer div div div{
     font-family: var(--descriptionFont);
 }
 
-footer div div img{
+footer div div .image{
     border: 10px solid #ddd;
 }
 
-footer div div img:nth-child(1){
+footer div div .image:nth-child(1){
+    width: 332px;
+    height: 475px;
     transform:rotateZ(-3deg);
+    background-size: cover;
 }
 
-footer div div img:nth-child(2){
+footer div div .image:nth-child(2){
+    width: 369px; 
+    height: 298px;
     transform:rotateZ(3deg);
+    background-size: cover;
 }
