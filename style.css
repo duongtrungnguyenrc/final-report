@@ -3,11 +3,12 @@
     --white: #fff;
     --headerHeight: 70px;
     --textColor: #000;
-    --descriptionFont: ystem-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --descriptionFont: System-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -45,12 +46,40 @@ header.hide {
 #menuButtons {
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: max-content;
     align-items: center;
 }
 
 #menuButtons li {
     list-style: none;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuButtons li:nth-child(4) {
+    width: 300px;
+}
+
+#navBar input {
+    width: 80%;
+    height: 20px;
+    border-color: var(--green);
+    border-radius: 5px;
+}
+
+.searchButton {
+    margin-left: 10px;
+    width: 20%;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+    z-index: 100;
+    background-color: #ddd;
 }
 
 #menuButtons a {
@@ -74,7 +103,7 @@ header.hide {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: 1s;
+    transition: 2s;
 }
 
 #slide .item {
@@ -100,12 +129,13 @@ header.hide {
     background-color: #ccc;
     border-radius: 50%;
     margin: 0 5px;
-    filter: blur(1px);
+    filter: blur(0.5px);
+    transition: 2s;
 }
 
 .dot.active {
     background-color: var(--green);
-    filter: none;
+    /* filter: none; */
 }
 
 footer {
@@ -147,7 +177,7 @@ footer div:nth-child(3) {
 footer div div {
     width: 80%;
     height: 100%;
-    margin: 0px 40px;
+    margin: 0px 80px;
 }
 
 footer div div div{

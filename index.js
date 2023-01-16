@@ -16,7 +16,6 @@ setInterval(() => {
 
 window.onscroll = () => {
     const navBar = document.getElementsByTagName('header').item(0);
-    console.log(document.documentElement.scrollTop);
     if(document.documentElement.scrollTop > 100)
         navBar.classList.add('hide')
     else if(document.documentElement.scrollTop <= 500)
