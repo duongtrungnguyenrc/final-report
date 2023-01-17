@@ -12,7 +12,7 @@ setInterval(() => {
     document.querySelector('#slide').style.left = '-' + index * 100 + '%';
     document.querySelector('.active').classList.remove('active')
     dots[index].classList.add('active')
-}, 3000);
+}, 5000);
 
 window.onscroll = () => {
     const navBar = document.getElementsByTagName('header').item(0);

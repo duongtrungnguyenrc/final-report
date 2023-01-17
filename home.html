@@ -7,17 +7,45 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
         <header class="">
             <div id="navBar">
                 <div id="logo"></div>
-                <ul id="menuButtons">
-                    <li><a href="">TÀI KHOẢN</a></li>
-                    <li><a href="">GIỎ HÀNG</a></li>
-                    <li><a href="">SẢN PHẨM</a></li>
-                    <li>
-                        <input type="text" placeholder="Tìm kiếm">
+                <ul id="lv1Menu">
+                    <li class="navObject"><a href="" class="lv1Button">TÀI KHOẢN</a></li>
+                    <li class="navObject"><a href="" class="lv1Button">GIỎ HÀNG</a></li>
+                    <li class="navObject" id="products"><a href="" class="lv1Button">SẢN PHẨM</a>
+                        <ul id="lv2Menu">
+                            <li class="nsType">
+                                <a href="" class="lv2Button">Trái cây</a>
+                                <ul class="lv3Menu">
+                                    <li><a href="" class="lv3Button">Nho</a></li>
+                                    <li><a href="" class="lv3Button">Cam</a></li>
+                                    <li><a href="" class="lv3Button">Dưa hấu</a></li>
+                                </ul>
+                            </li>
+                            <li class="nsType">
+                                <a href="" class="lv2Button">Rau củ</a>
+                                <ul class="lv3Menu">
+                                    <li><a href="" class="lv3Button">Cà rốt</a></li>
+                                    <li><a href="" class="lv3Button">Cải xanh</a></li>
+                                    <li><a href="" class="lv3Button">Rau thơm</a></li>
+                                </ul>
+                            </li>
+                            <li class="nsType">
+                                <a href="" class="lv2Button">Khác</a>
+                                <ul class="lv3Menu">
+                                    <li><a href="" class="lv3Button">Mật ong</a></li>
+                                    <li><a href="" class="lv3Button">Sữa bò</a></li>
+                                    <li><a href="" class="lv3Button">Trứng gà</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navObject">
+                        <input type="text" placeholder="Tìm kiếm" autocomplete="off">
                         <div class="searchButton">
                             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                         </div>
@@ -38,13 +66,17 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
+            <div id="intro">
+                <h1>NongSanSach</h1>
+                <p>Mang tinh hoa đến mọi nhà</p>
+            </div>
         </section>
-        <footer>
+        <section id="content">
             <div>
                 <h1>Về chúng tôi:</h1>
             </div>
-            <div>
-                <div>
+            <div class="contentFrame">
+                <div >
                     <div style="background-image: url(./pictures/nông\ dân.jpg);" class="image"></div>
                     <div style="display: block">
                         <h2>TỪ NHỮNG VÙNG NÔNG THÔN YÊN BÌNH</h2>
@@ -52,15 +84,26 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div>
+            <div class="contentFrame">
+                <div >
                     <div style="display: block">
                         <h2>CHÚNG TÔI LUÔN CUNG CẤP NHỮNG NÔNG SẢN SẠCH</h2>
-                        <p>Chắt chiu từ bàn tay của những người nông dân chất phát - gửi cho bạn những thứ tinh hoa của đất trời.</p>                
+                        <p>Chắt chiu từ bàn tay của những người nông dân chất phát - <br>gửi cho bạn những thứ tinh hoa của đất trời.</p>                
                     </div>
                     <div style="background-image: url(./pictures/cà\ rốt.jpg);" class="image"></div>
                 </div>
             </div>
+        </section>
+        <footer>
+            <div id="topFooter">
+                <ul>
+                    <li><a href="https://www.facebook.com/duongtrungnguyen.it/"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/duongtrungnguyen.it/"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <!-- <div id="bottomFooter">
+
+            </div> -->
         </footer>
     <script src="./index.js"></script>
 </body>

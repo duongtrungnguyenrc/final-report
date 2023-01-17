@@ -1,6 +1,7 @@
 :root{
     --green: #016341;
     --white: #fff;
+    --gray: #ddd;
     --headerHeight: 70px;
     --textColor: #000;
     --descriptionFont: System-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -9,7 +10,17 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: var(--descriptionFont);
+    color: var(--textColor);
 }
+
+ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    display: flex;
+}
+
+/* navigation bar */
 
 header {
     width: 100%;
@@ -37,20 +48,22 @@ header.hide {
 #logo{
     width: 50px;
     height: 50px;
-    background-color: #ddd;
+    background-image: url(./pictures/logo.png);
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-#menuButtons {
+#lv1Menu {
     display: flex;
     justify-content: space-between;
     width: max-content;
     align-items: center;
 }
 
-#menuButtons li {
+#lv1Menu .navObject {
     list-style: none;
     padding: 0px 10px;
     display: flex;
@@ -58,31 +71,41 @@ header.hide {
     align-items: center;
 }
 
-#menuButtons li:nth-child(4) {
+#lv1Menu .navObject:nth-child(4) {
     width: 300px;
 }
 
 #navBar input {
-    width: 80%;
-    height: 20px;
-    border-color: var(--green);
-    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+    border: 0.5px solid var(--green);
+    border-radius: 5px 0px 0px 5px;
+    background-color: var(--gray);
+    padding: 0px 5px;
+    outline: none;
 }
 
 .searchButton {
-    margin-left: 10px;
-    width: 20%;
-    height: 24px;
+    width: 10%;
+    height: 30px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--gray);
+    cursor: pointer;
+    border: 0.5px solid var(--green);
+}
+
+.searchButton a {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #000;
-    border-radius: 5px;
-    z-index: 100;
-    background-color: #ddd;
+    text-decoration: none;
+    color: var(--textColor);
+    
 }
 
-#menuButtons a {
+#lv1Menu li > .lv1Button {
     text-decoration: none;
     color: #000;
     padding: 20px 0px;
@@ -91,19 +114,74 @@ header.hide {
     font-size: 17px;
 }
 
+#products {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#products:hover #lv2Menu {
+    display: flex;
+}
+
+#lv2Menu{
+    top: 60px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-color: #f4f2f2;
+    justify-content: center;
+    display: none;
+}
+
+#lv2Menu > li{
+    width: 100px;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lv3Menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.lv2Button {
+    font-weight: bold;
+    height: 30px;
+}
+
+.lv2Button, .lv3Button{
+    width: 100px;
+    color: var(--textColor);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.lv3Button {
+    height: 20px;
+}
+
+/* home page slider */
+
 #slider {
     width: 100%;
     height: 80vh;
     position: relative;
     overflow: hidden;
     z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #slide {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: 2s;
+    transition: 3s;
 }
 
 #slide .item {
@@ -123,6 +201,30 @@ header.hide {
     bottom: 0px;
 }
 
+#intro {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#intro h1 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--white);
+    font-size: 100px;
+    margin: 0;
+}
+
+#intro p {
+    font-size:30px;
+    margin: 0;
+    color: #3cbe5c;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .dot {
     width: 15px;
     height: 15px;
@@ -135,17 +237,15 @@ header.hide {
 
 .dot.active {
     background-color: var(--green);
-    /* filter: none; */
 }
 
-footer {
-    width: 100%; 
-    height: 100vh;
-    position: relative;
-    z-index: -1;
+/* content */
+#content {
+    background-image: url(./pictures/background.png);
+    background-size: cover;
 }
 
-footer div {
+#content div {
     width: 100%;
     position: inherit;
     display: flex;
@@ -153,53 +253,87 @@ footer div {
     justify-content: center;
 }
 
-footer div:nth-child(1) {
+#content div:nth-child(1) {
     height: 10%;
-    
 }
 
-footer h1 {
+#content h1 {
     font-family: var(--descriptionFont);
     padding: 50px 0px 10px 0px;
     border-bottom: 2px solid #000;
 }
 
-footer div:nth-child(2) {
-    height: 50%;
-    margin: 100px 0;
+#content div:nth-child(2) {
+    margin: 100px 0px;
 }
 
-footer div:nth-child(3) {
-    height: 40%;
-    padding-bottom: 100px
+#content div:nth-child(3) {
+    padding: 100px 0px;
 }
 
-footer div div {
+#content div div {
     width: 80%;
     height: 100%;
     margin: 0px 80px;
 }
 
-footer div div div{
+#content div div .contentFrame{
     width: 50%;
     height: 100%;
     font-family: var(--descriptionFont);
 }
 
-footer div div .image{
-    border: 10px solid #ddd;
+#content div div .image{
+    border: 10px solid var(--gray);
 }
 
-footer div div .image:nth-child(1){
+#content div div .image:nth-child(1){
     width: 332px;
     height: 475px;
     transform:rotateZ(-3deg);
     background-size: cover;
 }
 
-footer div div .image:nth-child(2){
+#content div div .image:nth-child(2){
     width: 369px; 
     height: 298px;
     transform:rotateZ(3deg);
     background-size: cover;
+}
+
+/* home page footer */
+
+footer {
+    width: 100%;
+    height: max-content;
+    background-color: var(--gray);
+    z-index: 1;
+}
+
+footer div {
+    display: flex;
+}
+
+#topFooter {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#topFooter ul {
+    display: flex;
+    margin-left: 50px;
+}
+
+#topFooter ul li {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    padding: 0px 10px;
+}
+
+#topFooter ul li a {
+    color: var(--textColor);
 }
