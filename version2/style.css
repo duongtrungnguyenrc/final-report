@@ -5,7 +5,8 @@
     --gray: #ddd;
     --headerHeight: 70px;
     --textColor: #000;
-    --gray-border: #f0f0f0;
+    --gray-border: #cecccc;
+    --prices-color: rgb(135, 5, 5);
     --descriptionFont: System-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -27,6 +28,18 @@ ul {
 a {
     text-decoration: none;
     color: var(--textColor);
+}
+
+.products-list,
+.commit,
+#popular-list,
+#footer-box,
+.title,
+#slider {
+    border-radius: 5px;
+    width: 80%;
+    height: max-content;
+    margin: 5px 0px;
 }
 
 /* navigation bar */
@@ -65,12 +78,9 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0px;
 }
 
 #popular-list  {
-    width: 80%;
-    height: max-content;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -92,15 +102,16 @@ a {
     padding: 0px 20px; 
 }
 
+#popular{
+    overflow: scroll;
+    overflow-y: unset;
+}
 
 .products-list {
-    width: 80%;
     height: 100vh;
     background-color: var(--white);
-    margin-top: 10px;
     display: flex;
-    flex-wrap: wrap;
-    border-radius: 5px;;
+    flex-wrap: wrap;;
     overflow: scroll;
     overflow-x: unset;
 }
@@ -168,6 +179,10 @@ a {
     width: 100%;
 }
 
+.product a p {
+    color: var(--prices-color);
+}
+
 .product button {
     width: calc(100% - 40px);
     background-color: transparent;
@@ -179,7 +194,6 @@ a {
 /* slider */
 
 #slider {
-    width: 80%;
     height: 70vh;
     position: relative;
     overflow: hidden;
@@ -268,11 +282,16 @@ a {
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    height: 12rem;
+    height: max-content;
+    padding: 50px 0px;
+    width: 80%;
 }
 
 .title h1 {
+    width: max-content;
+    
     border-bottom: 3px solid #000;
 }
 
@@ -287,9 +306,9 @@ a {
 }
 
 .commit {
+    width: max-content;
     padding: 10px 0px;
     border: 1px solid var(--green);
-    border-radius: 5px;
     background-color: var(--white);
 }
 
@@ -330,38 +349,63 @@ a {
 
 #footer-box{
     width: 95%;
-    height: 300px;
-    background-color: var(--white);
+    height: max-content;
+    background-color: whitesmoke;
     margin-top: 50px;
 }
 
-.benefits {
+.footer-item {
     width: 100%;
-    height: 60px;
+    height: max-content;
     display: flex;
+}
+
+.benefits {
+    padding: 20px 0px;
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.1px solid var(--gray-border);
 }
 
-.benefit {
+.element {
     width: calc(100% / 2);
-    text-align: center;
+    border-collapse: collapse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.benefit:nth-child(1) {
+.element:nth-child(1) {
     border-right: 0.5px solid #555555;
 }
 
-.benefit:nth-child(2) {
+.element:nth-child(2) {
     border-left:  0.5px solid #555555;
 }
 
-.benefit p {
-    margin: 0;
+.benefits .element a {
+    font-weight: bold;
 }
+
+.element a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.informations {
+    padding: 20px 0px;
+}
+
+.footer-icon {
+    color: var(--green);
+    font-size: 1.5rem;
+    margin: 0px 10px;
+}
+
+
 /* mobile slider responsive */
-@media only screen and (max-width: 739px) {
+@media only screen and (max-width: 759px) {
     .navbar {
         border-top: 5px solid #016341;
         
@@ -403,7 +447,7 @@ a {
     }
 
     #popular-list li a {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .products-list {
@@ -416,7 +460,7 @@ a {
     }
 
     .products-type ul li a {
-        padding: 3px 5px;
+        padding: 5px 5px;
         font-size: 0.7rem;
     }
 
@@ -449,6 +493,10 @@ a {
         display: none;
     }
 
+    .commit {
+        width: 100%;
+    }
+
     #content td i {
         font-size: 1.5rem;
     }
@@ -466,15 +514,35 @@ a {
         padding: 5px 0px;
         font-size: 0.8rem;
     }
+
+    #footer-box {
+        width: 100%;
+    }
+
+    #footer-box .element a {
+        font-size: 0.7rem;
+    }
 }
 
 /* tablet slider responsive */
-@media only screen and (min-width: 740px) and (max-width:1023px) {
+@media only screen and (min-width: 760px) and (max-width:1023px) {
+
+.products-list,
+.commit,
+#popular-list,
+#footer-box,
+.title,
+#popular,
+#slider {
+    border-radius: 5px;
+    width: 90%;
+    height: max-content;
+    margin: 5px 0px;
+}
     /* slider */
     #slider {
         height: 35vh;
         top: 50px;
-        width: 100%;
     }
 
     #intro h1 {
@@ -493,22 +561,12 @@ a {
 
     /* products */
 
-    #popular-list {
-        width: 100%;
-    }
-
-    #popular{
-        width: 100%;
-        overflow: scroll;
-        overflow-y: unset;
+    .products-list {
+        height: 100vh;
     }
 
     #popular-list li a {
-        font-size: 0.5rem;
-    }
-
-    .products-list {
-        width: 100%;
+        font-size: 0.8rem;
     }
 
     .products-type h2 {
@@ -553,5 +611,9 @@ a {
         width: 100px;
         padding: 5px 0px;
         font-size: 0.8rem;
+    }
+
+    #footer-box .element a {
+        font-size: 0.7rem;
     }
 }
