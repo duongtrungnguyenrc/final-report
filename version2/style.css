@@ -1,0 +1,557 @@
+:root{
+    --green: #008847;
+    --black : #000;
+    --white: #fff;
+    --gray: #ddd;
+    --headerHeight: 70px;
+    --textColor: #000;
+    --gray-border: #f0f0f0;
+    --descriptionFont: System-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: url(../pictures/background.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+/* navigation bar */
+.navbar {
+    border-top: 10px solid var(--green);
+    transition: 1s;
+    position: fixed;
+    width: 100%;
+    left: 0;
+}
+
+.navber .hide {
+    display: none;
+}
+
+.logo {
+    background-image: url('../pictures/logo.png'); 
+    width: 50px; 
+    height: 50px; 
+    background-position: center; 
+    background-size: cover; 
+    border-radius: 50%;
+}
+
+
+
+.navbar input {
+    width: 500px;
+}
+
+/* list products */
+
+#products {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+#popular-list  {
+    width: 80%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+}
+
+
+#popular-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+#popular-list ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 20px; 
+}
+
+
+.products-list {
+    width: 80%;
+    height: 100vh;
+    background-color: var(--white);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;;
+    overflow: scroll;
+    overflow-x: unset;
+}
+
+.products-type {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--green);
+}
+
+.products-type h2 {
+    padding: 10px 20px;
+    margin: 0;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.product-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.products-type ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+}
+
+.products-type ul li {
+    margin: 0px 5px
+}
+
+.product-type li a {
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.product {
+    width: calc(100% / 4);
+    height: calc(100% / 2);
+    border: 0.1px solid var(--gray-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product a img {
+    width: 100%;
+    height: 60%;  
+}
+
+.product a h6,
+.product a p {
+    padding: 0px 20px;
+    width: 100%;
+}
+
+.product button {
+    width: calc(100% - 40px);
+    background-color: transparent;
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 4px;
+}
+
+/* slider */
+
+#slider {
+    width: 80%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 3s;
+}
+
+#slide .item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#slideNav {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+}
+
+#intro {
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#intro h1 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--white);
+    font-size: 7rem;
+    margin: 0;
+}
+
+#intro p {
+    font-size:2rem;
+    margin: 0;
+    color: #3cbe5c;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.dot {
+    width: 2rem;
+    height: 0.3rem;
+    background-color: var(--gray);
+    margin: 0 5px;
+    filter: blur(0.5px);
+    transition: 2s;
+}
+
+.dot.active {
+    background-color: var(--green);
+    filter: none;
+}
+
+/* main content */
+
+/* content */
+#main-content {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 12rem;
+}
+
+.title h1 {
+    border-bottom: 3px solid #000;
+}
+
+#content {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.commit {
+    padding: 10px 0px;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    background-color: var(--white);
+}
+
+.content-img {
+    border-radius: 50%;
+    background-image: url('../pictures/cà\ chua.jpg');
+    width: 500px; 
+    height: 500px; 
+    background-size: cover;
+    border: 10px solid var(--green);
+}
+
+#content td {
+    padding: 0px 30px;
+}
+
+#content td i {
+    font-size: 4rem;
+    color: var(--green);
+}
+
+
+.right-icon {
+    text-align: right;
+}
+
+#content button {
+    width: 10rem;
+    border-radius: 30px;
+    margin-top: 30px;
+    background-color: var(--green);
+    color: var(--white);border: none;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+
+/* introduce of company */
+
+#footer-box{
+    width: 95%;
+    height: 300px;
+    background-color: var(--white);
+    margin-top: 50px;
+}
+
+.benefits {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1px solid var(--gray-border);
+}
+
+.benefit {
+    width: calc(100% / 2);
+    text-align: center;
+}
+
+.benefit:nth-child(1) {
+    border-right: 0.5px solid #555555;
+}
+
+.benefit:nth-child(2) {
+    border-left:  0.5px solid #555555;
+}
+
+.benefit p {
+    margin: 0;
+}
+/* mobile slider responsive */
+@media only screen and (max-width: 739px) {
+    .navbar {
+        border-top: 5px solid #016341;
+        
+    }
+
+    #slider {
+        height: 25vh;
+    }
+
+    #intro h1 {
+        font-size: 3rem;
+    }
+
+    #intro p {
+        font-size: 1rem;
+    }
+
+    .dot {
+        width: 1rem;
+        height: 0.1rem;
+        margin: 0 3px;
+    }
+
+    #slider {
+        top: 0px;
+        width: 100%;
+        height: 30vh;
+        margin-top: 50px;
+    }
+
+    #popular-list {
+        width: 100%;
+    }
+
+    #popular{
+        width: 100%;
+        overflow: scroll;
+        overflow-y: unset;
+    }
+
+    #popular-list li a {
+        font-size: 0.5rem;
+    }
+
+    .products-list {
+        width: 100%;
+    }
+
+    .products-type h2 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .products-type ul li a {
+        padding: 3px 5px;
+        font-size: 0.7rem;
+    }
+
+
+    .product {
+        width: calc(100% / 2);
+        height: calc(100% / 2);
+    }
+
+    #content table tr:nth-child(1) td:nth-child(2){
+        display: none;
+    }
+
+    .title {
+        height: 8rem;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    }
+
+    .title p,
+    #content tr p {
+        font-size: 0.8rem;
+    }
+
+    .content-img {
+        width: 150px; 
+        height: 150px; 
+        display: none;
+    }
+
+    #content td i {
+        font-size: 1.5rem;
+    }
+
+    #content td h1 {
+        font-size: 1rem;
+    }
+
+    #content td p {
+        display: none;
+    }
+
+    #content button {
+        width: 100px;
+        padding: 5px 0px;
+        font-size: 0.8rem;
+    }
+}
+
+/* tablet slider responsive */
+@media only screen and (min-width: 740px) and (max-width:1023px) {
+    /* slider */
+    #slider {
+        height: 35vh;
+        top: 50px;
+        width: 100%;
+    }
+
+    #intro h1 {
+        font-size: 5rem;
+    }
+
+    #intro p {
+        font-size: 2rem;
+    }
+
+    .dot {
+        width: 1.2rem;
+        height: 0.2rem;
+        margin: 0 3px;
+    }
+
+    /* products */
+
+    #popular-list {
+        width: 100%;
+    }
+
+    #popular{
+        width: 100%;
+        overflow: scroll;
+        overflow-y: unset;
+    }
+
+    #popular-list li a {
+        font-size: 0.5rem;
+    }
+
+    .products-list {
+        width: 100%;
+    }
+
+    .products-type h2 {
+        font-size: 1rem;
+    }
+
+    .product {
+        width: calc(100% / 2);
+        height: calc(100% / 2);
+    }
+
+    /* footer content */
+
+    #main-content {
+        padding: 50px 0px;
+    }
+
+    .content-img {
+        width: 150px; 
+        height: 150px; 
+        border-width: 5px;
+    }
+    
+    #content td {
+        padding: 20px 20px
+    }
+
+    #content td i {
+        font-size: 2rem;
+    }
+
+    #content td h1 {
+        font-size: 1.5rem;
+    }
+
+    #content td p {
+        display: none;
+    }
+
+
+    #content button {
+        width: 100px;
+        padding: 5px 0px;
+        font-size: 0.8rem;
+    }
+}

@@ -48,7 +48,7 @@ header.hide {
 #logo{
     width: 50px;
     height: 50px;
-    background-image: url(./pictures/logo.png);
+    background-image: url(../pictures/logo.png);
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -68,7 +68,6 @@ header.hide {
     padding: 0px 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #lv1Menu .navObject:nth-child(4) {
@@ -83,6 +82,10 @@ header.hide {
     background-color: var(--gray);
     padding: 0px 5px;
     outline: none;
+    box-shadow: inset 0 5px #ced0df, 
+    0 -5px #f3f3f3,
+    inset 0 -5px 5px #eff1f0,
+    0 0px 15px #cdd4de;
 }
 
 .searchButton {
@@ -92,6 +95,7 @@ header.hide {
     background-color: var(--gray);
     cursor: pointer;
     border: 0.5px solid var(--green);
+    
 }
 
 .searchButton a {
@@ -127,11 +131,12 @@ header.hide {
 #lv2Menu{
     top: 60px;
     position: absolute;
-    width: 400px;
-    height: 200px;
+    width: 350px;
+    height:fit-content;
     background-color: #f4f2f2;
     justify-content: center;
     display: none;
+    padding-bottom: 20px;
 }
 
 #lv2Menu > li{
@@ -150,6 +155,7 @@ header.hide {
 .lv2Button {
     font-weight: bold;
     height: 30px;
+    font-size: 20px;
 }
 
 .lv2Button, .lv3Button{
@@ -162,6 +168,8 @@ header.hide {
 
 .lv3Button {
     height: 20px;
+    font-size: 15px;
+    padding: 2px 0px;
 }
 
 /* home page slider */
@@ -226,10 +234,10 @@ header.hide {
 }
 
 .dot {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 3px;
     background-color: #ccc;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     margin: 0 5px;
     filter: blur(0.5px);
     transition: 2s;
@@ -242,63 +250,78 @@ header.hide {
 /* content */
 #content {
     background-image: url(./pictures/background.png);
-    background-size: cover;
+    background-color: #edece8;
+    background-size: 70%;
+    background-position: center;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
-#content div {
-    width: 100%;
+#content #mainTitle {
+    width: 100vw;
+    height: 100px;
     position: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#content div:nth-child(1) {
-    height: 10%;
-}
-
-#content h1 {
+#mainTitle h1 {
     font-family: var(--descriptionFont);
-    padding: 50px 0px 10px 0px;
     border-bottom: 2px solid #000;
 }
 
-#content div:nth-child(2) {
-    margin: 100px 0px;
+
+#mainContent {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#content div:nth-child(3) {
-    padding: 100px 0px;
-}
-
-#content div div {
-    width: 80%;
-    height: 100%;
-    margin: 0px 80px;
-}
-
-#content div div .contentFrame{
-    width: 50%;
-    height: 100%;
+#content .contentItem{
     font-family: var(--descriptionFont);
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#content div div .image{
+.contentItem:nth-child(1) {
+    height: 40%;
+    width: 100%;
+}
+
+.contentItem:nth-child(2),
+.contentItem:nth-child(3) {
+    height: 30%;
+}
+
+#content .image{
     border: 10px solid var(--gray);
+    margin: 0px 30px;
 }
 
-#content div div .image:nth-child(1){
-    width: 332px;
-    height: 475px;
+#content .image:nth-child(1){
+    width: 272px;
+    height: 425px;
     transform:rotateZ(-3deg);
     background-size: cover;
+    
 }
 
-#content div div .image:nth-child(2){
-    width: 369px; 
-    height: 298px;
+#content .image:nth-child(2){
+    width: 319px; 
+    height: 248px;
     transform:rotateZ(3deg);
     background-size: cover;
+}
+
+.contentText {
+    margin: 0px 30px;
 }
 
 /* home page footer */

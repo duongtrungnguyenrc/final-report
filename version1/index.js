@@ -20,5 +20,4 @@ window.onscroll = () => {
         navBar.classList.add('hide')
     else if(document.documentElement.scrollTop <= 500)
         navBar.classList.remove('hide')
-
 }
